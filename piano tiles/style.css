@@ -1,0 +1,530 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    user-select: none;
+     
+  }
+ 
+  button,
+  .result_box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2),
+                0px 6px 20px 0 rgba(0,0,0,0.19);
+    transition: all 0.3s ease;
+  }
+   
+  
+  .start button{
+    width: 200px;
+    height: 60px;
+    font-size: 3vw;
+    font-weight: 700;
+    
+    color: #0c4685;
+    padding: 1vw 2vw;
+    outline: none;
+    border: none;
+    border-radius: 1vw;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2),
+              0px 6px 20px 0 rgba(0,0,0,0.19);
+    margin-top: 170px;
+  }
+  
+  #game{
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .logo{
+    height: 25%;  
+  width: auto;  
+  position: absolute;
+  top: 20%;  
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
+  .img{
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  .name-box{
+  width: 27vw;
+  height: 13vw;  
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+   
+  top: 53%;  
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1vw;
+  box-shadow: 0px 0px 18px 4px rgba(0, 0, 0, 0.3);
+
+  }
+  .name{
+    color: #000000;
+    padding-left: 2.4vw;
+    padding-top: 0.5vw;
+    font: normal bold 25px/1.2 "proxima-nova";
+    letter-spacing: -0.1vw;
+    font-size: 1.7vw;
+    
+  }
+  .game-name{
+    width: 15vw;
+  height: 3.5vw;
+  font-family: 'Kanit', sans-serif;
+  padding-left: 4vw;
+  padding-top: 0vw;
+  opacity: 1;
+  position: absolute;
+  top: 35%;  
+  left: 51%;
+  transform: translate(-50%, -50%); 
+  font-size: 2vw;
+
+  }
+ 
+  .om {
+    position: absolute;
+    height: 3vw;
+    width: 22.3vw;
+    margin-top: -10vw;
+    margin-left: 2vw;
+    padding-left: 1vw;
+    border: none;
+    background-color: #007bff;
+    border-radius: 0.5vw;
+    background: linear-gradient( 111deg, rgba(205, 215, 250, 0.1) 0%, rgba(61, 79, 240, 0.1) 100% );
+    box-shadow: inset 0px 10px 5px 0px rgba(255, 255, 255, 0.15), inset 0px -10px 5px 0px rgba(205, 215, 250, 0.15);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+  .om1{
+    position: absolute;
+    height: 3vw;
+    width: 22.3vw;
+    margin-top: -6vw;
+    margin-left: 2vw;
+    padding-left: 1vw;
+    border: none;
+    background-color: #007bff;
+    border-radius: 0.5vw;
+    background: linear-gradient( 111deg, rgba(205, 215, 250, 0.1) 0%, rgba(61, 79, 240, 0.1) 100% );
+    box-shadow: inset 0px 10px 5px 0px rgba(255, 255, 255, 0.15), inset 0px -10px 5px 0px rgba(205, 215, 250, 0.15);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+  .inst{
+    position: absolute;
+  top: 94%;
+  left: 51%;
+  transform: translate(-50%, -50%);
+  height: 7vw;
+  width: 10vw;
+  font-size: small;
+  cursor: pointer;
+  }
+  #game #game-container,
+  #game #tiles{
+    position: absolute;
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    display: flex;
+    z-index: 2;
+  }
+  
+  #game .score{
+    width: 100%;
+    max-width: 50vw;
+    height: auto;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    padding: 1vw 0;
+    z-index: 5;
+  }
+  #game .score p{
+    font-size: 40px;
+    width: auto;
+    color: rgb(255, 0, 85);
+    z-index: 5;
+    margin-left: 720px;
+  }
+  
+  #game #game-container .line{
+    width: 25%;
+    border-right: solid 1px rgb(197, 197, 197);
+  }
+  
+  #game #game-container #line4 #line2 #line1 #line3{
+    border-right: none;
+ 
+  }
+  #game-container{
+    margin-left: 29vw;
+     
+ 
+  }
+  #game #tiles{
+    display: block;
+    overflow: hidden;
+    margin-left: 29vw;
+    
+  }
+  
+  #game #tiles div{
+    width: 25%;
+    height: 30%;
+    position: absolute;
+    top: -30%;
+    background:rgb(0, 0, 0);
+    outline: none;
+    cursor: pointer;
+     
+  }
+ 
+  
+  .move{
+    transform: translateY(145vh);
+    transition: transform linear 2s;
+  }
+  .speedX1{
+    transition: transform linear 1.5s;
+  }
+  .speedX2{
+    transition: transform linear 1.25s;
+  }
+  .speedX3{
+    transition: transform linear 1s;
+  }
+  .speedX4{
+    transition: transform linear 0.75s;
+  }
+  .result_box{
+      background: #fff;
+      width: 450px;
+      height: auto;
+      padding: 25px 30px;
+      border-radius: 5px;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, -50%) scale(0.9);
+  }
+  
+  .result_box.activeResult{
+      z-index: 5;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .result_box .complete_text{
+      font-size: 20px;
+      font-weight: 500;
+  }
+  .result_box .score_text{
+      margin: 10px 0;
+      font-size: 18px;
+      font-weight: 500;
+  }
+  .result_box  .icon{
+      font-size: 100px;
+      color: #007bff;
+      margin-bottom: 10px;
+  }
+  
+  .result_box .buttons{
+      position: relative;
+      display: flex;
+      margin: 20px 0;
+  }
+  
+  .result_box .buttons button{
+      margin: 0 10px;
+      width: auto;
+      height: 40px;
+      padding: 0 20px;
+      border: none;
+      outline: none;
+      font-size: 18px;
+      font-weight: 500;
+      border-radius: 5px;
+      border: 1px solid #007bff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+  }
+  @media(max-width:412px)  {
+    #game-container{
+      margin-left: 0vw;
+       
+   
+    }
+    #game #tiles{
+      display: block;
+      overflow: hidden;
+      margin-left: 0vw;
+      
+    }
+    #game .score{
+      width: 50%;
+      max-width: 50vw;
+      height: auto;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      padding: 1vw 0;
+      z-index: 5;
+      margin-left: 24vw;
+    }
+    #game #tiles div{
+      width: 25vw;
+      height: 30%;
+      position: absolute;
+      top: -30%;
+      background:rgb(0, 0, 0);
+      outline: none;
+      cursor: pointer;
+       
+    }
+    #game #game-container .line{
+      width: 25vw;
+      border-right: solid 1px rgb(197, 197, 197);
+    }
+    
+    #game #game-container #line4 #line2 #line1 #line3{
+      border-right: none;
+   
+    }
+
+    
+  }
+  
+  /* @media(max-width: 412px){
+      .result_box .game-name{
+          width: 100%;
+      }
+      .inst{
+        margin: 0vw;
+        margin-top: -30vw;
+        margin-left: -10vw;
+
+      }
+      .start button{
+        margin-top: 50vw;
+         width:50vw ; 
+         height: 15vw;
+         font-weight: 10000;
+         font-size: 7vw;
+      }
+      .name-box{
+         height: 40vw;
+         width: 80vw;
+         margin-top: 6vw;
+      }
+      .name{
+        font-size: 5vw;
+        margin-left: 5vw;
+        margin-top: 1vw;
+        
+      }
+      .om1{
+         margin-top: -30vw;
+        width: 70vw;
+        margin-left: 5vw;
+        height: 9vw;
+        
+      }
+      .om{
+        margin-top: -18vw;
+        width: 70vw;
+        margin-left: 5vw;
+        height: 9vw;
+      }
+      .game-name{
+        margin: 0vw;
+        font-size: 7vw;
+        margin-top: 2vw;
+        margin-left: 30vw;
+        width: 100vw;
+      }
+      
+      .logo{
+        margin: 0vw;
+        margin-top: 4vw;
+        margin-left: 2vw;
+        height: 45vw;
+        width: 45vw;
+      }
+      #game-container  {
+        margin: 0vw;
+      }
+      #game #tiles{
+        margin: 0vw;
+      }
+      #game .score p{
+        margin: 0vw;
+      }
+      @media(max-width: 412px){
+        #game-container{
+          margin : 0vw ;
+        }
+      }
+      
+    }
+    @media(max-width: 477px){
+      .result_box .game-name{
+        width: 100%;
+    }
+    .inst{
+      margin: 0vw;
+      margin-top: -20vw;
+      margin-left: -8vw;
+
+    }
+    .start button{
+      margin-top: 50vw;
+       width:50vw ; 
+       height: 15vw;
+       font-weight: 10000;
+       font-size: 7vw;
+    }
+    .name-box{
+       height: 40vw;
+       width: 80vw;
+       margin-top: 6vw;
+    }
+    .name{
+      font-size: 5vw;
+      margin-left: 5vw;
+      margin-top: 1vw;
+      
+    }
+    .om1{
+       margin-top: -30vw;
+      width: 70vw;
+      margin-left: 5vw;
+      height: 9vw;
+      
+    }
+    .om{
+      margin-top: -18vw;
+      width: 70vw;
+      margin-left: 5vw;
+      height: 9vw;
+    }
+    .game-name{
+      margin: 0vw;
+      font-size: 7vw;
+      margin-top: 2vw;
+      margin-left: 30vw;
+      width: 100vw;
+    }
+    
+    .logo{
+      margin: 0vw;
+      margin-top: 4vw;
+      margin-left: 2vw;
+      height: 45vw;
+      width: 45vw;
+    }
+    #game-container  {
+      margin: 0vw;
+    }
+    #game #tiles{
+      margin: 0vw;
+    }
+    #game .score p{
+      margin: 0vw;
+    }
+  } */
+  /* @media(max-width: 800px){
+    .result_box .game-name{
+      width: 100%;
+  }
+  .inst{
+    margin: 0vw;
+    margin-top: 2vw;
+    margin-left: -6vw;
+    font-size: large;
+
+  }
+  .start button{
+    margin-top: 40vw;
+     width:50vw ; 
+     height: 15vw;
+     font-weight: 10000;
+     font-size: 7vw;
+  }
+  .name-box{
+     height: 30vw;
+     width: 60vw;
+     margin-top: 6vw;
+  }
+  .name{
+    font-size: 4vw;
+    margin-left: 2vw;
+    margin-top: 1vw;
+    
+  }
+  .om1{
+     margin-top: -25vw;
+    width: 50vw;
+    margin-left: 5vw;
+    height: 9vw;
+    
+  }
+  .om{
+    margin-top: -15vw;
+    width: 50vw;
+    margin-left: 5vw;
+    height: 9vw;
+  }
+  .game-name{
+    margin: 0vw;
+    font-size: 7vw;
+    margin-top: 2vw;
+    margin-left: 30vw;
+    width: 100vw;
+  }
+  
+  .logo{
+    margin: 0vw;
+    margin-top: 2vw;
+    margin-left: 1vw;
+    height: 40vw;
+    width: 40vw;
+  }
+  #game-container  {
+    margin: 0vw;
+  }
+  #game #tiles{
+    margin: 0vw;
+  }
+  #game .score p{
+    margin: 0vw;
+  }
+      }
+
+       
+         
+
+     
+   */
